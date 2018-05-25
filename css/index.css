@@ -1,0 +1,349 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+/*
+h3{
+	height: 200px;
+	width: 200px;
+	background-color: pink;
+	transition: all 0.5s;
+	transform: translateX(-1000px);
+	
+}
+.section.current h3{
+	transform: translateX(400px) translateY(400px);
+}
+*/
+
+.section{
+	overflow: hidden;
+	position: relative;
+}
+
+/*第一屏*/
+.first{
+	padding-top: 88px;
+}
+.first .logo{
+	width: 251px;
+	height: 186px;
+	margin: 0 auto;
+	background-image: url(../img/logo.png);
+}
+.first .text{
+	text-align: center;
+    line-height: 1;
+    margin: 85px 0 45px;
+}
+
+/*给文字部分的图片添加动画效果*/
+.first img{
+	opacity: 0;
+	margin: 0 35px;
+}
+
+.first.current img{
+	/*过渡效果*/
+	transition: all 1s;
+	opacity: 1;
+	margin: 0 10px;
+}
+.first .info{
+	height: 49px;
+	background: url(../img/info_1.png) center center no-repeat;
+}
+
+/*第二屏*/
+.second{
+	padding: 0 100px;
+}
+.second>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.second .shield{
+	/*width: 534px;
+	height: 534px;*/
+	width: 428px;
+    height: 498px;
+}
+.second img{
+	display: block;
+    float: left;
+}
+/*打乱盾牌位置*/
+.second img:nth-child(1) {
+    transform: translate(35px, 78px) rotate(45deg);
+}
+.second img:nth-child(2) {
+    transform: translate(135px, 282px) rotate(15deg);
+}
+.second img:nth-child(3) {
+    transform: translate(187px, 62px) rotate(15deg);
+}
+.second img:nth-child(4) {
+    transform: translate(10px, 162px) rotate(30deg);
+}
+.second img:nth-child(5) {
+    transform: translate(465px, 522px) rotate(30deg);
+}
+.second img:nth-child(6) {
+    transform: translate(480px, 62px) rotate(90deg);
+}
+.second img:nth-child(7) {
+    transform: translate(180px, -305px) rotate(80deg);
+}
+.second img:nth-child(8) {
+    transform: translate(300px, -22px) rotate(70deg);
+}
+.second img:nth-child(9) {
+    transform: translate(280px, -322px) rotate(60deg);
+}
+/*盾牌动画*/
+.second.current img{
+	transition: all 1s;
+	transform: translate(0px,0px) rotate(0deg);
+}
+
+.second .info {
+    width: 635px;
+    height: 309px;
+    background: url(../img/info_2.png);
+}
+
+
+/*第三屏*/
+.third{
+	padding: 0 100px;
+}
+.third>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.third .info {
+    width: 631px;
+    height: 278px;
+    background: url(../img/info_3.png);
+}
+/*圆圈*/
+.third .circle{
+	width: 453px;
+	height: 449px;
+	background: url(../img/circle.png);
+	/*设置圆圈的动画*/
+	animation: circle 4s infinite linear;
+}
+@keyframes circle{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+/*小火箭*/
+.third .rocket{
+	width: 204px;
+	height: 204px;
+	background: url(../img/rocket.png);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	/*设置隐藏位置*/
+	transform: translate(500px,210px);
+}
+/*小火箭的动画*/
+.third.current .rocket{
+	transition: all 1s;
+	transform: translate(1111px,-245px);
+}
+
+/*第四屏*/
+.fourth{
+	padding: 0 85px;
+}
+.fourth>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+/*搜索*/
+.fourth .search{
+	width: 529px;
+	height: 320px;
+	position: relative;
+	transform: translateX(-100%);
+}
+/*框*/
+.fourth .input{
+	width: 529px;
+	height: 66px;
+	background: url(../img/search.png);
+}
+/*搜索文字*/
+.fourth .key{
+	/*width: 99px;*/
+	width: 0;
+	height: 22px;
+	position: absolute;
+	left: 20px;
+	top: 24px;
+	background: url(../img/key.png) left center no-repeat;
+}
+/*搜索结果*/
+.fourth .wrap{
+	width: 529px;
+	height: 372px;
+	transform: translateY(-13px);
+	overflow: hidden;
+}
+.fourth .result{
+	width: 100%;
+	height: 100%;
+	background: url(../img/result.png);
+	/*隐藏*/
+	transform: translateY(-100%);
+}
+/*搜索框内容的动画*/
+.fourth.current .search{
+	transition: all 1s;
+	transform: translateX(0px);
+}
+.fourth.current .key{
+	transition: all 2s steps(5) 1s;
+	width: 99px;
+}
+.fourth.current .result{
+	transition: all 1s 3s;
+	transform: translateY(0);
+}
+
+/*info*/
+.fourth .info {
+    width: 612px;
+    height: 299px;
+    background: url(../img/info_4.png);
+}
+
+/*第五屏*/
+.fifth{
+	/*padding-top: 30px;*/
+}
+.fifth>div{
+	display: flex;
+	flex-direction: column;
+}
+.fifth .info{
+	height: 134px;
+	/*width: 1077px;*/
+	margin: 30px 0;
+	background: url(../img/info_5.png) center center no-repeat;
+}
+.fifth .broswer{
+	width: 1004px;
+	margin: 0 auto;
+	flex: 1;
+	background-color: rgba(255,255,255,0.15);
+	position: relative;
+}
+.fifth .toolbar{
+	height: 80px;
+	background: url(../img/toolbar.png) left bottom no-repeat;
+	position: relative;
+	opacity: 0;
+	
+}
+
+.leftline, .topline, .rightline, .bottomline {
+    position: absolute;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.leftline{
+	left: 0;
+	height: 100%;
+	border-left: 1px solid rgba(255,255,255,0.5);
+	transform: translateY(-100%);
+	opacity: 0;
+}
+.topline{
+	top: 0;
+	width: 100%;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	transform: translateX(100%);
+	opacity: 0;
+}
+.rightline{
+	right: 0;
+	height: 100%;
+	border-right: 1px solid rgba(255,255,255,0.5);
+	transform: translateY(100%);
+	opacity: 0;
+}
+.bottomline{
+	bottom: 0;
+	width: 100%;
+	/*最下面的边框可以不设置动画效果*/
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+/*设置工具栏大小*/
+.fifth .box{
+	position: absolute;
+	left: 70px;
+	top: 32px;
+	/*width: 920px;*/
+	width: 0;
+	height: 27px;
+	/*width: 1004px;
+	height: 72px;*/
+	overflow: hidden;
+}
+/*设置边框*/
+.fifth .box span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+.fifth .extra{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 394px;
+	height: 29px;
+	background: url(../img/extra.png);
+	opacity: 0;
+}
+.fifth .line{
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+}
+/*动画*/
+/*第一步，大的边框出现*/
+.fifth.current .leftline,.fifth.current .rightline{
+	transition: all 1s;
+	transform: translateY(0);
+	opacity: 1;
+}
+.fifth.current .topline{
+	transition: all 1s;
+	transform: translateX(0);
+	opacity: 1;
+}
+/*第二步 工具栏*/
+.fifth.current .box{
+	transition: all 1s 1.2s;
+	width: 920px;
+}
+
+.fifth.current .toolbar,.fifth.current .extra{
+	transition: all 1s 1.7s;
+	opacity: 1;
+}
